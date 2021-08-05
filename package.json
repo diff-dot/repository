@@ -1,6 +1,6 @@
 {
-  "name": "@diff./type-project-name-here",
-  "version": "1.0.0",
+  "name": "@diff./repository",
+  "version": "0.0.1",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -12,11 +12,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/diff-dot/task-manager"
+    "url": "git+https://github.com/diff-dot/repository"
   },
   "author": "DIFF.",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "reflect-metadata": "^0.1.13"
+  },
   "devDependencies": {
     "@types/node": "^13.7.7",
     "@types/chai": "^4.2.7",
