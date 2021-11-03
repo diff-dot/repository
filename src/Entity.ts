@@ -1,5 +1,8 @@
 export type EntityProp = keyof Entity;
 export class Entity {
+  constructor() {
+  }
+
   public static create<E extends typeof Entity>(this: E, prop: Omit<InstanceType<E>, EntityProp>): InstanceType<E> {
     const entity = new this() as InstanceType<E>;
     Object.assign(entity, prop);
