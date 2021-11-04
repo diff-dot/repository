@@ -14,7 +14,7 @@ export function RoutingId(): (target: any, propertyName: any) => void {
   };
 }
 
-export function getRoutingIdProp<T extends Entity>(target: T): keyof T | undefined {
+export function getRoutingIdProp<T extends Entity, K extends keyof T>(target: T): K | undefined {
   const entityId = Reflect.getMetadata(routingIdKey, target);
   return entityId;
 }

@@ -23,7 +23,7 @@ export function EntityId(options: EntityIdOptions = {}): (target: any, propertyN
   };
 }
 
-export function getEntityIdProps<T extends Entity>(target: T): Map<keyof T, EntityIdOptions> | undefined {
+export function getEntityIdProps<T extends Entity, K extends keyof T>(target: T): Map<K, EntityIdOptions> | undefined {
   const entityId = Reflect.getMetadata(entityIdKey, target);
   return entityId;
 }

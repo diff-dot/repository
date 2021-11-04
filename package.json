@@ -1,14 +1,14 @@
 {
   "name": "@diff./repository",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "mocha test",
     "lint": "eslint . --ext .ts",
-    "build": "tsc",
-    "deploy": "tsc; npm publish --access public"
+    "build": "node_modules/typescript/bin/tsc",
+    "deploy": "node_modules/typescript/bintsc; npm publish --access public"
   },
   "repository": {
     "type": "git",
