@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
+import { Entity } from '../Entity';
 import { EntityIdOptions } from '../type/EntityIdOptions';
 
 /**
@@ -22,7 +23,7 @@ export function EntityId(options: EntityIdOptions = {}): (target: any, propertyN
   };
 }
 
-export function getEntityIdProps(target: any): Map<string, EntityIdOptions> | undefined {
+export function getEntityIdProps<T extends Entity>(target: T): Map<keyof T, EntityIdOptions> | undefined {
   const entityId = Reflect.getMetadata(entityIdKey, target);
   return entityId;
 }

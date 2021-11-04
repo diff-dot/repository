@@ -1,6 +1,8 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
+import { Entity } from '../Entity';
+
 /**
  * 라우팅 또는 파티셔닝에 사용할 property 를 지정할 decorator
  * 하나의 property 에만 지정 가능
@@ -12,7 +14,7 @@ export function RoutingId(): (target: any, propertyName: any) => void {
   };
 }
 
-export function getRoutingIdProp(target: any): string | undefined {
+export function getRoutingIdProp<T extends Entity>(target: T): keyof T | undefined {
   const entityId = Reflect.getMetadata(routingIdKey, target);
   return entityId;
 }
